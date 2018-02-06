@@ -6,6 +6,7 @@ import org.junit.Test;
 
 public class WordSearchTest {
 
+	
 	@Test
 	public void testThatWordSearchObjCreated() {
 		WordSearch wordSearch = new WordSearch(null);
@@ -19,4 +20,10 @@ public class WordSearchTest {
 		assertEquals(false, bFileFound);
 	}
 
+	@Test
+	public void testCheckForValidInputFileReturnsTrueWhenFoundAndNoPathSpecified() {
+		WordSearch wordSearch = new WordSearch(null);
+		boolean bFileFound = wordSearch.checkForValidInputFile("PillarExampleWordSearch.txt");
+		assertEquals(true, bFileFound);
+	}
 }
