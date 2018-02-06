@@ -44,6 +44,10 @@ public class WordSearch {
 		}
 	}
 	
+	// Assume first line (and only one line) of input file contains words
+	// to find.
+	// This could be modified later to have a parameter of number of lines
+	// to read that contain words to find. 
 	private boolean readWordsToFind() {
 
 		try {
@@ -68,27 +72,16 @@ public class WordSearch {
 	}
 	
 	private boolean readSearchGrid() {
-		return true;
-	}
 	
-	private boolean saveForLater() {
-		
 		ArrayList<String> gridData = new ArrayList<String>();
-
+		String gridInputString, gridInputStringNoCommas;
+		
 		try {
 			FileReader fr = new FileReader(inputFileName);
 			BufferedReader br = new BufferedReader(fr);
-			String gridInputString, gridInputStringNoCommas, inputWordsToFind;
-			inputWordsToFind = br.readLine();
-			String[] words = inputWordsToFind.split(",");
-
-			for (int i = 0; i < words.length; i++) {
-				wordsToFind.add((words[i]));
-			}
-			if (displayInput) {
-				System.out.println(wordsToFind.toString());
-			}
-
+			// read past the first line that contains the words to find
+			br.readLine();
+		
 			while ((gridInputString = br.readLine()) != null) {
 				gridInputStringNoCommas = gridInputString.replaceAll(",", "");
 				gridInputStringNoCommas = gridInputStringNoCommas.replaceAll(" ", "");
@@ -133,6 +126,10 @@ public class WordSearch {
 		} else {
 			return false;
 		}
+	}
+
+	public ArrayList<String> getWordsToFind() {
+		return wordsToFind;
 	}
 
 

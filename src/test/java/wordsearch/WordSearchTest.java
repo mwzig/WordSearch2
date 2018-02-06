@@ -2,6 +2,8 @@ package wordsearch;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
 import org.junit.Test;
 
 public class WordSearchTest {
@@ -45,8 +47,17 @@ public class WordSearchTest {
 	@Test
 	public void testProcessInputFileReadsWordsToFind() {
 		WordSearch wordSearch = new WordSearch("PillarExampleWordSearch.txt", true);
-		boolean bFileProcessed = wordSearch.processInputFile();
-		assertEquals(true, bFileProcessed);
+		wordSearch.processInputFile();
+		ArrayList<String> checkWordsToFind = new ArrayList<String>();
+		checkWordsToFind.add("BONES");
+		checkWordsToFind.add("KHAN");
+		checkWordsToFind.add("KIRK");
+		checkWordsToFind.add("SCOTTY");
+		checkWordsToFind.add("SPOCK");
+		checkWordsToFind.add("SULU");
+		checkWordsToFind.add("UHURA");
+				
+		assertEquals(checkWordsToFind, wordSearch.getWordsToFind());
 	}
 
 	
