@@ -34,4 +34,11 @@ public class WordSearchTest {
 				+ "/Projects2018/WordSearch2/Resources/PillarExampleWordSearch.txt");
 		assertEquals(true, bFileFound);
 	}
+	
+	@Test
+	public void testProcessInputFileReturnsTrue() {
+		WordSearch wordSearch = new WordSearch("PillarExampleWordSearch.txt");
+		boolean bFileProcessed = wordSearch.processInputFile();
+		assertEquals(true, bFileProcessed);
+	}
 }
