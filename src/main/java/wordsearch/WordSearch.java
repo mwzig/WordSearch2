@@ -15,10 +15,12 @@ public class WordSearch {
 
 	public WordSearch(String inputFileName) {
 		this.inputFileName = inputFileName;
+		this.wordsToFind = new ArrayList<String>();
 	}
-
+ 
 	public WordSearch(String inputFileName, boolean displayInput) {
 		this.inputFileName = inputFileName;
+		this.wordsToFind = new ArrayList<String>();
 		this.displayInput = displayInput;
 	}
 
@@ -43,6 +45,25 @@ public class WordSearch {
 	}
 	
 	private boolean readWordsToFind() {
+
+		try {
+			FileReader fr = new FileReader(inputFileName);
+			BufferedReader br = new BufferedReader(fr);
+			String inputWordsToFind;
+			inputWordsToFind = br.readLine();
+			String[] words = inputWordsToFind.split(",");
+
+			for (int i = 0; i < words.length; i++) {
+				wordsToFind.add((words[i]));
+			}
+			if (displayInput) {
+				System.out.println(wordsToFind.toString());
+			}
+			br.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
 		return true;
 	}
 	

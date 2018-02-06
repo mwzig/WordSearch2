@@ -37,8 +37,18 @@ public class WordSearchTest {
 	
 	@Test
 	public void testProcessInputFileReturnsTrue() {
-		WordSearch wordSearch = new WordSearch("PillarExampleWordSearch.txt");
+		WordSearch wordSearch = new WordSearch("PillarExampleWordSearch.txt", true);
+		boolean bFileProcessed = wordSearch.processInputFile();
+		assertEquals(true, bFileProcessed);
+	} 
+	
+	@Test
+	public void testProcessInputFileReadsWordsToFind() {
+		WordSearch wordSearch = new WordSearch("PillarExampleWordSearch.txt", true);
 		boolean bFileProcessed = wordSearch.processInputFile();
 		assertEquals(true, bFileProcessed);
 	}
+
+	
+	
 }
