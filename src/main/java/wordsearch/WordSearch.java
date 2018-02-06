@@ -27,8 +27,10 @@ public class WordSearch {
 			String inputBasePath = basePath + java.io.File.separator +
 					"Resources" + java.io.File.separator;
 			this.inputFileName = inputBasePath + fileName;
+		} else {
+			this.inputFileName = fileName;
 		}
-
+		
 		File file = new File(this.inputFileName);
 		boolean fileExists = file.exists(); 
 		if (fileExists) {
