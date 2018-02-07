@@ -11,6 +11,7 @@ public class WordSearch {
 	private String inputFileName;
 	boolean displayInput = false;
 	private ArrayList<String> wordsToFind;
+	private Grid searchGrid;
 	
 
 	public WordSearch(String inputFileName) {
@@ -92,7 +93,7 @@ public class WordSearch {
 			}
 			fr.close();
 
-			//searchGrid = new Grid(gridData);
+			searchGrid = new Grid(gridData);
 			return true;
 			
 		} catch (IOException e) {
