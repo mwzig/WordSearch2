@@ -47,8 +47,37 @@ public class WordSearch {
 		this.wordsToFind = wordsToFind;
 	}
 
-	public static void main(String args[]) {
+	// *********************************************************************************************//
+	// * Main method - passed an argument that is the name of a file
+	// * that exists in the Resources folder in this directory
+	// * (or a fully qualified filename). 
+	// * If "true" is passed on the second argument, the input file is displayed
+	// * before printing any found words.
+	// ********************************************************************************************//
+	public static void main(String[] args) {
 
+		WordSearch wordSearch;
+		boolean displayInput = false;
+
+		if (args.length == 0) {
+			System.out.println("Please try again and enter an input file name");
+		} else {
+			if (args.length == 2 && args[1].toLowerCase().equals("true")) {
+				displayInput = true;
+			}
+			wordSearch = new WordSearch(args[0], displayInput);
+			if (wordSearch.processInputFile()) {
+				wordSearch.findWords();
+				for (FoundWord foundWord : wordSearch.getFoundWords()) {
+					System.out.println(foundWord.toString());
+				}
+				for (String wordNotFound : wordSearch.getWordsNotFound()) {
+					System.out.println("Not found: " + wordNotFound);
+				}
+			} else {
+				System.out.println("Please try again and enter a valid input file name");
+			}
+		}
 	}
 
 	public boolean processInputFile() {
@@ -171,8 +200,9 @@ public class WordSearch {
 	}
 
 	// ***************************************************************************************//
-	// * This method searches each of the GridLine objects contained in the Grid object for 
-	// * the specified word.  If found, it adds the word to the foundWords ArrayList.
+	// * This method searches each of the GridLine objects contained in the Grid
+	// * object for the specified word, and if found, it adds the word to the 
+	// * foundWords ArrayList.
 	// ***************************************************************************************//
 	public void findWord(String wordToFind) {
 

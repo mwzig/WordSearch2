@@ -94,18 +94,18 @@ public class WordSearchTest {
 	@Test
 	public void testCheckForValidInputFileReturnsTrueWhenFoundAndPathSpecified() {
 		WordSearch wordSearch = new WordSearch(null);
-		boolean bFileFound = wordSearch.checkForValidInputFile("c:/Users/Mary"
-				+ "/Projects2018/WordSearch2/Resources/PillarExampleWordSearch.txt");
+		boolean bFileFound = wordSearch.checkForValidInputFile(
+				"c:/Users/Mary" + "/Projects2018/WordSearch2/Resources/PillarExampleWordSearch.txt");
 		assertEquals(true, bFileFound);
 	}
-	
+
 	@Test
 	public void testProcessInputFileReturnsTrue() {
 		WordSearch wordSearch = new WordSearch("PillarExampleWordSearch.txt", true);
 		boolean bFileProcessed = wordSearch.processInputFile();
 		assertEquals(true, bFileProcessed);
-	} 
-	
+	}
+
 	@Test
 	public void testProcessInputFileReadsWordsToFind() {
 		WordSearch wordSearch = new WordSearch("PillarExampleWordSearch.txt", true);
@@ -118,7 +118,7 @@ public class WordSearchTest {
 		checkWordsToFind.add("SPOCK");
 		checkWordsToFind.add("SULU");
 		checkWordsToFind.add("UHURA");
-				
+
 		assertEquals(checkWordsToFind, wordSearch.getWordsToFind());
 	}
 
@@ -135,7 +135,7 @@ public class WordSearchTest {
 		boolean bAllWordsFound = wordSearch.findWords();
 		assertTrue(bAllWordsFound);
 	}
-	
+
 	@Test
 	public void testWordSearchPrintOutput() {
 		ArrayList<String> wordsToFind = new ArrayList<String>();
@@ -276,7 +276,7 @@ public class WordSearchTest {
 		assertTrue(bAllWordsFound);
 	}
 
-	// Notice that I tested the junk food first. 
+	// Notice that I tested the junk food first.
 	@Test
 	public void testHealthyFoodWordSearchInInputFile() {
 
@@ -295,13 +295,11 @@ public class WordSearchTest {
 		ArrayList<String> expectedWordsNotFound = new ArrayList<String>();
 		expectedWordsNotFound.add("BONESPDQ");
 		expectedWordsNotFound.add("UHURAASAP");
-		
+
 		ArrayList<String> checkWordsNotFound = wordSearch.getWordsNotFound();
 		assertEquals(expectedWordsNotFound.toString(), checkWordsNotFound.toString());
-		
+
 		assertFalse(bAllWordsFound);
 	}
 
-	
-	
 }
