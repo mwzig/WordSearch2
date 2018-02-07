@@ -31,6 +31,9 @@ public class WordSearch {
 	public WordSearch(String inputFileName, boolean displayInput) {
 		this(inputFileName);
 		this.displayInput = displayInput;
+		if (displayInput) {
+			System.out.println("displayInput set to True");
+		}
 	}
 
 	// *********************************************************************************************//
@@ -151,17 +154,14 @@ public class WordSearch {
 
 	// *********************************************************************************************//
 	// * This method iterates through the list of words to find and checks all of
-	// the GridLine *//
-	// * objects to see if they contain the word. *//
+	// * the GridLine objects to see if they contain the word.
 	// * If the list of found words is the same size as the list of words to find
-	// *//
-	// * the we found everything, so return true, otherwise return false *// *//
+	// * then we found everything so return true, otherwise return false.
 	// *********************************************************************************************//
 	public boolean findWords() {
 
 		for (String wordToFind : wordsToFind) {
 			findWord(wordToFind);
-
 		}
 		if (wordsToFind.size() == foundWords.size()) {
 			return true;
@@ -205,6 +205,10 @@ public class WordSearch {
 
 	public ArrayList<FoundWord> getFoundWords() {
 		return foundWords;
+	}
+
+	public ArrayList<String> getWordsNotFound() {
+		return wordsNotFound;
 	}
 
 }

@@ -250,6 +250,57 @@ public class WordSearchTest {
 		assertTrue(bAllWordsFound);
 	}
 
+	@Test
+	public void testPillarExampleWordSearchInInputFile() {
+		String expectedPrintFoundWords = "BONES: (6,0),(7,0),(8,0),(9,0),(10,0)" + "KHAN: (9,5),(8,5),(7,5),(6,5)"
+				+ "KIRK: (7,4),(7,3),(7,2),(7,1)" + "SCOTTY: (5,0),(5,1),(5,2),(5,3),(5,4),(5,5)"
+				+ "SPOCK: (1,2),(2,3),(3,4),(4,5),(5,6)" + "SULU: (3,3),(2,2),(1,1),(0,0)"
+				+ "UHURA: (0,4),(1,3),(2,2),(3,1),(4,0)";
+
+		WordSearch wordSearch = new WordSearch("PillarExampleWordSearch.txt");
+		wordSearch.processInputFile();
+		wordSearch.findWords();
+		String checkPrintFoundWords = "";
+		for (FoundWord foundWord : wordSearch.getFoundWords()) {
+			checkPrintFoundWords += foundWord.toString();
+		}
+		assertEquals(expectedPrintFoundWords, checkPrintFoundWords);
+	}
+
+	@Test
+	public void testJunkFoodWordSearchInInputFile() {
+
+		WordSearch wordSearch = new WordSearch("JunkFoodWordSearch.txt");
+		wordSearch.processInputFile();
+		boolean bAllWordsFound = wordSearch.findWords();
+		assertTrue(bAllWordsFound);
+	}
+
+	// Notice that I tested the junk food first. 
+	@Test
+	public void testHealthyFoodWordSearchInInputFile() {
+
+		WordSearch wordSearch = new WordSearch("HealthyFoodWordSearch.txt");
+		wordSearch.processInputFile();
+		boolean bAllWordsFound = wordSearch.findWords();
+		assertTrue(bAllWordsFound);
+	}
+
+	@Test
+	public void testWordSearchWithWordsNotFound() {
+
+		WordSearch wordSearch = new WordSearch("WordSearchWithWordsNotFound.txt");
+		wordSearch.processInputFile();
+		boolean bAllWordsFound = wordSearch.findWords();
+		ArrayList<String> expectedWordsNotFound = new ArrayList<String>();
+		expectedWordsNotFound.add("BONESPDQ");
+		expectedWordsNotFound.add("UHURAASAP");
+		
+		ArrayList<String> checkWordsNotFound = wordSearch.getWordsNotFound();
+		assertEquals(expectedWordsNotFound.toString(), checkWordsNotFound.toString());
+		
+		assertFalse(bAllWordsFound);
+	}
 
 	
 	
