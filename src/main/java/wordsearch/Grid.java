@@ -23,6 +23,11 @@ public class Grid {
 	private GridLetter[][] gridLetters;
 	private ArrayList<GridLine> gridLines;
 
+	// *************************************************************************************//
+	// * This Grid constructor is the main constructor.                                    *//
+	// * It is used to create the Grid object from an ArrayList of Strings (one for each   *//
+	// * line in the search grid).                                                         *//
+	// *************************************************************************************//
 	public Grid(ArrayList<String> gridData) {
 
 		int gridLength = gridData.get(0).length();
@@ -69,6 +74,16 @@ public class Grid {
 			formatGridLinesFromColumns();
 			break;
 		}
+	}
+
+	// *************************************************************************************//
+	// * This Grid constructor is also used for testing so that we can create an array of  *//
+	// * GridLetter objects in the test class and pass it on the constructor.              *//
+	// *************************************************************************************//
+	public Grid(GridLetter[][] gridLetters) {
+		this.gridLetters = gridLetters;
+		gridLines = new ArrayList<GridLine>();
+		formatGridLines();
 	}
 
 	private void formatGridLines() {

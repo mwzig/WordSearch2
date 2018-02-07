@@ -4,11 +4,73 @@ import static org.junit.Assert.*;
 
 import java.util.ArrayList;
 
+import org.junit.Before;
 import org.junit.Test;
 
 public class WordSearchTest {
 
-	
+	private GridLetter[][] inputGrid;
+
+	@Before
+	public void setUp() throws Exception {
+
+		GridLetter gridLetter;
+		inputGrid = new GridLetter[4][4];
+
+		int xCoordinate = 0;
+		gridLetter = new GridLetter('a', xCoordinate, 0);
+		inputGrid[xCoordinate][0] = gridLetter;
+
+		gridLetter = new GridLetter('b', xCoordinate, 1);
+		inputGrid[xCoordinate][1] = gridLetter;
+
+		gridLetter = new GridLetter('c', xCoordinate, 2);
+		inputGrid[xCoordinate][2] = gridLetter;
+
+		gridLetter = new GridLetter('d', xCoordinate, 3);
+		inputGrid[xCoordinate][3] = gridLetter;
+
+		xCoordinate = 1;
+		gridLetter = new GridLetter('e', xCoordinate, 0);
+		inputGrid[xCoordinate][0] = gridLetter;
+
+		gridLetter = new GridLetter('f', xCoordinate, 1);
+		inputGrid[xCoordinate][1] = gridLetter;
+
+		gridLetter = new GridLetter('g', xCoordinate, 2);
+		inputGrid[xCoordinate][2] = gridLetter;
+
+		gridLetter = new GridLetter('h', xCoordinate, 3);
+		inputGrid[xCoordinate][3] = gridLetter;
+
+		xCoordinate = 2;
+		gridLetter = new GridLetter('i', xCoordinate, 0);
+		inputGrid[xCoordinate][0] = gridLetter;
+
+		gridLetter = new GridLetter('j', xCoordinate, 1);
+		inputGrid[xCoordinate][1] = gridLetter;
+
+		gridLetter = new GridLetter('k', xCoordinate, 2);
+		inputGrid[xCoordinate][2] = gridLetter;
+
+		gridLetter = new GridLetter('l', xCoordinate, 3);
+		inputGrid[xCoordinate][3] = gridLetter;
+
+		xCoordinate = 3;
+		gridLetter = new GridLetter('m', xCoordinate, 0);
+		inputGrid[xCoordinate][0] = gridLetter;
+
+		gridLetter = new GridLetter('n', xCoordinate, 1);
+		inputGrid[xCoordinate][1] = gridLetter;
+
+		gridLetter = new GridLetter('o', xCoordinate, 2);
+		inputGrid[xCoordinate][2] = gridLetter;
+
+		gridLetter = new GridLetter('p', xCoordinate, 3);
+		inputGrid[xCoordinate][3] = gridLetter;
+
+	}
+
 	@Test
 	public void testThatWordSearchObjCreated() {
 		WordSearch wordSearch = new WordSearch(null);
@@ -60,7 +122,19 @@ public class WordSearchTest {
 		assertEquals(checkWordsToFind, wordSearch.getWordsToFind());
 	}
 
-	
+	@Test
+	public void findWordsAcross() {
+		ArrayList<String> wordsToFind = new ArrayList<String>();
+		wordsToFind.add("abcd");
+		wordsToFind.add("fgh");
+		wordsToFind.add("ijk");
+		wordsToFind.add("no");
+
+		Grid searchGrid = new Grid(inputGrid);
+		WordSearch wordSearch = new WordSearch(searchGrid, wordsToFind);
+		boolean bAllWordsFound = wordSearch.findWords();
+		assertTrue(bAllWordsFound);
+	}
 	
 	
 }
