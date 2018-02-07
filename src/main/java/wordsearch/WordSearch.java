@@ -47,13 +47,6 @@ public class WordSearch {
 		this.wordsToFind = wordsToFind;
 	}
 
-	// *********************************************************************************************//
-	// * Main method - passed an argument that is the name of a file
-	// * that exists in the Resources folder in this directory
-	// * (or a fully qualified filename). 
-	// * If "true" is passed on the second argument, the input file is displayed
-	// * before printing any found words.
-	// ********************************************************************************************//
 	public static void main(String[] args) {
 
 		WordSearch wordSearch;
@@ -80,7 +73,7 @@ public class WordSearch {
 		}
 	}
 
-	public boolean processInputFile() {
+	protected boolean processInputFile() {
 
 		boolean fileValid = checkForValidInputFile(this.inputFileName);
 
@@ -161,7 +154,7 @@ public class WordSearch {
 	// * If a filename with path name is not passed, then format the path name with
 	// * the current directory + /Resources/.
 	// *********************************************************************************************//
-	public boolean checkForValidInputFile(String fileName) {
+	protected boolean checkForValidInputFile(String fileName) {
 
 		if (!fileName.contains("/")) {
 			String basePath = new File("").getAbsolutePath();
@@ -183,11 +176,11 @@ public class WordSearch {
 
 	// *********************************************************************************************//
 	// * This method iterates through the list of words to find and checks all of
-	// * the GridLine objects to see if they contain the word.
+	// * the GridLine objects in the Grid to see if they contain the word.
 	// * If the list of found words is the same size as the list of words to find
 	// * then we found everything so return true, otherwise return false.
 	// *********************************************************************************************//
-	public boolean findWords() {
+	protected boolean findWords() {
 
 		for (String wordToFind : wordsToFind) {
 			findWord(wordToFind);
@@ -204,7 +197,7 @@ public class WordSearch {
 	// * object for the specified word, and if found, it adds the word to the 
 	// * foundWords ArrayList.
 	// ***************************************************************************************//
-	public void findWord(String wordToFind) {
+	private void findWord(String wordToFind) {
 
 		boolean wordFound = false;
 		ArrayList<LocCoordinate> locCoordList = new ArrayList<LocCoordinate>();

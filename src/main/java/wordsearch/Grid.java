@@ -351,14 +351,6 @@ public class Grid {
 	@Override
 	public String toString() {
 
-		/*
-		for (int x = 0; x < gridLetters.length; x++) {
-			for (int y = 0; y < gridLetters.length; y++) {
-				System.out.println(gridLetters[x][y]);
-			}
-			System.out.println();
-		}*/
-		
 		return "Grid [gridLetters=" + Arrays.toString(gridLetters) + ",  gridLines=" + gridLines + "]";
 	}
 

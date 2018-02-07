@@ -14,17 +14,17 @@ public class GridLetter {
 		this.locCoordinate = locCoordinate;
 	}
 	
-	@Override
-	public String toString() {
-		return "GridLetter [letter=" + letter + ", locCoordinate=" + locCoordinate + "]";
-	}
-
 	public char getLetter() {
 		return letter;
 	}
 
 	public LocCoordinate getLocCoordinate() {
 		return locCoordinate;
+	}
+	
+	@Override
+	public String toString() {
+		return "GridLetter [letter=" + letter + ", locCoordinate=" + locCoordinate + "]";
 	}
 	
 }
