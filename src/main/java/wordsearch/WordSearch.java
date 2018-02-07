@@ -203,4 +203,8 @@ public class WordSearch {
 		return wordsToFind;
 	}
 
+	public ArrayList<FoundWord> getFoundWords() {
+		return foundWords;
+	}
+
 }

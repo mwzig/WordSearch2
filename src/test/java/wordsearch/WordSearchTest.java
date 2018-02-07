@@ -136,5 +136,121 @@ public class WordSearchTest {
 		assertTrue(bAllWordsFound);
 	}
 	
+	@Test
+	public void testWordSearchPrintOutput() {
+		ArrayList<String> wordsToFind = new ArrayList<String>();
+		wordsToFind.add("abcd");
+		String expectedPrintOutput = "abcd: (0,0),(0,1),(0,2),(0,3)";
+
+		Grid searchGrid = new Grid(inputGrid);
+		WordSearch wordSearch = new WordSearch(searchGrid, wordsToFind);
+		wordSearch.findWords();
+		assertEquals(expectedPrintOutput, wordSearch.getFoundWords().get(0).toString());
+	}
+
+	@Test
+	public void findWordsAcrossReverse() {
+		ArrayList<String> wordsToFind = new ArrayList<String>();
+		wordsToFind.add("dcba");
+		wordsToFind.add("hgf");
+		wordsToFind.add("kji");
+		wordsToFind.add("on");
+
+		Grid searchGrid = new Grid(inputGrid);
+		WordSearch wordSearch = new WordSearch(searchGrid, wordsToFind);
+		boolean bAllWordsFound = wordSearch.findWords();
+		assertTrue(bAllWordsFound);
+	}
+
+	@Test
+	public void findWordsDown() {
+		ArrayList<String> wordsToFind = new ArrayList<String>();
+		wordsToFind.add("aeim");
+		wordsToFind.add("fjn");
+		wordsToFind.add("gk");
+		wordsToFind.add("dh");
+
+		Grid searchGrid = new Grid(inputGrid);
+		WordSearch wordSearch = new WordSearch(searchGrid, wordsToFind);
+		boolean bAllWordsFound = wordSearch.findWords();
+		assertTrue(bAllWordsFound);
+	}
+
+	@Test
+	public void findWordsDownReverse() {
+		ArrayList<String> wordsToFind = new ArrayList<String>();
+		wordsToFind.add("miea");
+		wordsToFind.add("njf");
+		wordsToFind.add("kg");
+		wordsToFind.add("hd");
+
+		Grid searchGrid = new Grid(inputGrid);
+		WordSearch wordSearch = new WordSearch(searchGrid, wordsToFind);
+		boolean bAllWordsFound = wordSearch.findWords();
+		assertTrue(bAllWordsFound);
+	}
+
+	@Test
+	public void findWordsDiagonalTopLeftBottomRight() {
+		ArrayList<String> wordsToFind = new ArrayList<String>();
+		wordsToFind.add("eb");
+		wordsToFind.add("ifc");
+		wordsToFind.add("mjgd");
+		wordsToFind.add("nkh");
+		wordsToFind.add("ol");
+
+		Grid searchGrid = new Grid(inputGrid);
+		WordSearch wordSearch = new WordSearch(searchGrid, wordsToFind);
+		boolean bAllWordsFound = wordSearch.findWords();
+		assertTrue(bAllWordsFound);
+	}
+
+	@Test
+	public void findWordsDiagonalTopLeftBottomRightReverse() {
+		ArrayList<String> wordsToFind = new ArrayList<String>();
+		wordsToFind.add("be");
+		wordsToFind.add("cfi");
+		wordsToFind.add("dgjm");
+		wordsToFind.add("hkn");
+		wordsToFind.add("lo");
+
+		Grid searchGrid = new Grid(inputGrid);
+		WordSearch wordSearch = new WordSearch(searchGrid, wordsToFind);
+		boolean bAllWordsFound = wordSearch.findWords();
+		assertTrue(bAllWordsFound);
+	}
+
+	@Test
+	public void findWordsDiagonalBottomLeftTopRight() {
+		ArrayList<String> wordsToFind = new ArrayList<String>();
+		wordsToFind.add("in");
+		wordsToFind.add("ejo");
+		wordsToFind.add("afkp");
+		wordsToFind.add("bgl");
+		wordsToFind.add("ch");
+
+		Grid searchGrid = new Grid(inputGrid);
+		WordSearch wordSearch = new WordSearch(searchGrid, wordsToFind);
+		boolean bAllWordsFound = wordSearch.findWords();
+		assertTrue(bAllWordsFound);
+	}
+
+	@Test
+	public void findWordsDiagonalBottomLeftTopRightReverse() {
+		ArrayList<String> wordsToFind = new ArrayList<String>();
+		wordsToFind.add("ni");
+		wordsToFind.add("oje");
+		wordsToFind.add("pkfa");
+		wordsToFind.add("lgb");
+		wordsToFind.add("hc");
+
+		Grid searchGrid = new Grid(inputGrid);
+		WordSearch wordSearch = new WordSearch(searchGrid, wordsToFind);
+		boolean bAllWordsFound = wordSearch.findWords();
+		assertTrue(bAllWordsFound);
+	}
+
+
+	
 	
 }
