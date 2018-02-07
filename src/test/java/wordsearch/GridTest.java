@@ -17,6 +17,7 @@ import wordsearch.LocCoordinate;
 public class GridTest {
 
 	private GridLetter[][] inputGrid;
+	private boolean displayData = false;
 
 	@Before
 	public void setUp() throws Exception {
@@ -72,18 +73,19 @@ public class GridTest {
 		String checkConcatGridLineStrings = "";
 		for (GridLine gridLine : gridLines) {
 			checkConcatGridLineStrings += gridLine.getLineString();
-			//System.out.println(gridLine.toString());
 		}
 
 		String expectedConcatGridLineStrings = "abcdefgh" + "hgfedcba" + "abcdefgh" + "hgfedcba" + "abcdefgh"
 				+ "hgfedcba" + "abcdefgh" + "hgfedcba" + "abcdefgh" + "hgfedcba" + "abcdefgh" + "hgfedcba" + "abcdefgh"
 				+ "hgfedcba" + "abcdefgh" + "hgfedcba";
 
-		// System.out.println("Testing GetGridLinesFromFormatRows");
-		// System.out.println("expected grid row string is " +
-		// expectedConcatGridLineStrings);
-		// System.out.println("grid row string is " + checkConcatGridLineStrings);
-
+		if (displayData) {
+			System.out.println("****************************************");
+			System.out.println("Testing GetGridLinesFromFormatRows");
+		    System.out.println("expected grid row string is " +
+		    expectedConcatGridLineStrings);
+		    System.out.println("grid row string is " + checkConcatGridLineStrings);
+		}
 		assertEquals(expectedConcatGridLineStrings, checkConcatGridLineStrings);
 	}
 
@@ -130,7 +132,6 @@ public class GridTest {
 		assertEquals(expectedRevLocCoordinate2.toString(), checkRevLocCoordinateRev2.toString());
 		assertEquals(expectedRevLocCoordinate3.toString(), checkRevLocCoordinateRev3.toString());
 		assertEquals(expectedRevLocCoordinate4.toString(), checkRevLocCoordinateRev4.toString());
-
 	}
 
 	@Test
@@ -149,10 +150,13 @@ public class GridTest {
 				+ "cccccccc" + "dddddddd" + "dddddddd" + "eeeeeeee" + "eeeeeeee" + "ffffffff" + "ffffffff" + "gggggggg"
 				+ "gggggggg" + "hhhhhhhh" + "hhhhhhhh";
 
-		// System.out.println("Testing GetGridLinesFromFormatColumns");
-		// System.out.println("expected grid column string is " +
-		// expectedConcatGridLineStrings);
-		// System.out.println("grid column string is " + checkConcatGridLineStrings);
+		if (displayData) {
+			System.out.println("****************************************");
+			System.out.println("Testing GetGridLinesFromFormatColumns");
+			System.out.println("expected grid column string is " +
+				expectedConcatGridLineStrings);
+			System.out.println("grid column string is " + checkConcatGridLineStrings);
+		}
 		assertEquals(expectedConcatGridLineStrings, checkConcatGridLineStrings);
 	}
 
@@ -165,19 +169,19 @@ public class GridTest {
 		String checkConcatGridLineStrings = "";
 		for (GridLine gridLine : gridLines) {
 			checkConcatGridLineStrings += gridLine.getLineString();
-			//System.out.println(gridLine.toString());
 		}
 
 		String expectedConcatGridLineStrings = "ab" + "ba" + "abc" + "cba" + "abcd" + "dcba" + "abcde" + "edcba"
 				+ "abcdef" + "fedcba" + "abcdefg" + "gfedcba" + "abcdefgh" + "hgfedcba" + "bcdefgh" + "hgfedcb"
 				+ "cdefgh" + "hgfedc" + "defgh" + "hgfed" + "efgh" + "hgfe" + "fgh" + "hgf" + "gh" + "hg";
 
-		// System.out.println("Testing
-		// GetGridLinesFromFormatDiagonalsTopLeftToBottomRight");
-		// System.out.println("expected grid diagonal TLBR string is " +
-		// expectedConcatGridLineStrings);
-		// System.out.println("grid diagonal string is " + checkConcatGridLineStrings);
-
+		if (displayData) {
+			System.out.println("****************************************");
+			System.out.println("Testing GetGridLinesFromFormatDiagonalsTopLeftToBottomRight");
+			System.out.println("expected grid diagonal TLBR string is " +
+					expectedConcatGridLineStrings);
+			System.out.println("grid diagonal string is " + checkConcatGridLineStrings);
+		}
 		assertEquals(expectedConcatGridLineStrings, checkConcatGridLineStrings);
 	}
 
@@ -190,7 +194,6 @@ public class GridTest {
 		String checkConcatGridLineStrings = "";
 		for (GridLine gridLine : gridLines) {
 			checkConcatGridLineStrings += gridLine.getLineString();
-			//System.out.println(gridLine.toString());
 		}
 
 		String expectedConcatGridLineStrings = "ab" 
@@ -220,10 +223,12 @@ public class GridTest {
 		+ "gh"
 		+ "hg";
 
-		//System.out.println("Testing GetGridLinesFromFormatDiagonalsBottomLeftToTopRight");
-		//System.out.println("expected grid diagonal BLTR string is " + expectedConcatGridLineStrings);
-		//System.out.println("grid diagonal string is " + checkConcatGridLineStrings);
-
+		if (displayData) {
+			System.out.println("****************************************");
+			System.out.println("Testing GetGridLinesFromFormatDiagonalsBottomLeftToTopRight");
+			System.out.println("expected grid diagonal BLTR string is " + expectedConcatGridLineStrings);
+			System.out.println("grid diagonal string is " + checkConcatGridLineStrings);
+		}
 		assertEquals(expectedConcatGridLineStrings, checkConcatGridLineStrings);
 
 	}
