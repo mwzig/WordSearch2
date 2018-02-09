@@ -7,16 +7,8 @@ import java.util.Arrays;
 //*  The Grid class represents the grid of letters that one sees when doing a word search.    *//
 //*  It contains a two-dimensional array of GridLetter objects that represent the letters     *//
 //*  going across and down.                                                                   *//
-//*  A GridLetter object contains a char representing the letter and a LocCoordinate object   *//
-//*  that represents the x,y coordinates of that letter in the grid.                          *//
-//*  The Grid class also contains an ArrayList of GridLine objects called "gridLines".        *//
-//*  The GridLine object represents a line in the Grid which can be horizontal, vertical or   *//
-//*  diagonal.                                                                                *//
-//*  Since you can search backwards in a word search, the ArrayList also contains a GridLine  *//
-//*  object for the reverse representation of each row, column and diagonal line.             *//
-//*  Methods in the Grid class format the GridLine objects for each row, column and diagonal  *//
-//*  line (and their reverse representation).  The methods then add these GridLine objects to *//
-//*  the ArrayList of GridLine objects called "gridLines".                                    *//
+//*  Upon construction, the Grid object uses that array to create an ArrayList of GridLine    *//
+//*  objects that represent each string to be searched horizontally, vertically and diagonally*//
 //*********************************************************************************************//
 public class Grid {
 

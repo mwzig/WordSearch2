@@ -174,12 +174,6 @@ public class WordSearch {
 		}
 	}
 
-	// *********************************************************************************************//
-	// * This method iterates through the list of words to find and checks all of
-	// * the GridLine objects in the Grid to see if they contain the word.
-	// * If the list of found words is the same size as the list of words to find
-	// * then we found everything so return true, otherwise return false.
-	// *********************************************************************************************//
 	protected boolean findWords() {
 
 		for (String wordToFind : wordsToFind) {
@@ -192,11 +186,6 @@ public class WordSearch {
 		}
 	}
 
-	// ***************************************************************************************//
-	// * This method searches each of the GridLine objects contained in the Grid
-	// * object for the specified word, and if found, it adds the word to the 
-	// * foundWords ArrayList.
-	// ***************************************************************************************//
 	private void findWord(String wordToFind) {
 
 		boolean wordFound = false;

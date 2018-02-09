@@ -1,11 +1,6 @@
 package wordsearch;
 import java.util.ArrayList;
 
-//*********************************************************************************************//
-//*  The FoundWord class consists of a String for the word found in the grid, as well as an   *//
-//*  ArrayList of locCoordinate objects that represent the x,y coordinates for each letter in *//
-//*  the word.                                                                                *//
-//*********************************************************************************************//
 public class FoundWord {
 
 	private String word;

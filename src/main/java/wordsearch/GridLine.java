@@ -8,9 +8,6 @@ import java.util.ArrayList;
 //*  chars on a particular row, column, or diagonal line in the Grid.                         *//
 //*  It also contains an ArrayList of LocCoordinate objects for each of the letters on that   *//
 //*  line.                                                                                    *//
-//*  Additionally, it contains a method to get the reverse of itself, so for example, if a    *//
-//*  row contains the String "abcd", then the reverse of that is "dcba".  In that method, the *//
-//*  LocCoordinate objects are also reversed.                                                 *//                                                                                    *//
 //*********************************************************************************************//
 public class GridLine {
 

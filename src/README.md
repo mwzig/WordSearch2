@@ -112,7 +112,7 @@ The `WordSearch` class is the main driving class of the application.  It reads t
   
 The `Grid` object contains a two dimensional array of `GridLetter` objects (to represent multiple rows of letters in the word search grid).  A `GridLetter` object represents one letter in the grid - it has a character for the letter, and a `LocCoordinate` object to represent the x,y coordinates of the letter in the `Grid`.
 
-The `Grid` object also contains an ArrayList of `GridLine` objects.  A `GridLine` represents the string of letters found moving horizontally, vertically, or diagonally across the lines in the `Grid`.  Thus, the `GridLine` object contains the string of letters for that line, and it also contains an ArrayList of the `LocCoordinate` objects for the letters in that string.  Since we can search from right to left, the `GridLine`s also contain the reverse string for each line.
+The `Grid` object uses that array to create  an ArrayList of `GridLine` objects.  A `GridLine` represents the string of letters found moving horizontally, vertically, or diagonally across the lines in the `Grid`.  Thus, the `GridLine` object contains the string of letters for that line, and it also contains an ArrayList of the `LocCoordinate` objects for the letters in that string.  Since we can search from right to left, the `GridLine`s also contain the reverse string for each line.
 
 The `WordSearch` object then uses the list of words to find, and for each word it searches each `GridLine` in the `Grid` object's ArrayList of `GridLine`s.  If it finds the word, it creates a `FoundWord` object that contains a String representing the word found, and an ArrayList of `LocCoordinate` objects for each of the letters in the word found.
 
