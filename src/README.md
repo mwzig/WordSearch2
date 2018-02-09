@@ -116,5 +116,5 @@ The `Grid` object uses that array to create  an ArrayList of `GridLine` objects.
 
 The `WordSearch` object then uses the list of words to find, and for each word it searches each `GridLine` in the `Grid` object's ArrayList of `GridLine`s.  If it finds the word, it creates a `FoundWord` object that contains a String representing the word found, and an ArrayList of `LocCoordinate` objects for each of the letters in the word found.
 
-When the `WordSearch` object finishes searching the grid, it iterates through its ArrayList of `FoundWord` objects, and it then prints out the word found and its coordinates in the grid.  (It also prints any words not found).  
+When the `WordSearch` object finishes searching the grid, it iterates through its ArrayList of `FoundWord` objects, and it then prints out the word found and its coordinates in the grid. It also prints any words not found.  
 
